@@ -1,36 +1,34 @@
-import { View,Text, StyleSheet,TextInput,ScrollView,TouchableOpacity, Alert } from "react-native";
+import { View,Text, StyleSheet,TextInput,ScrollView,TouchableOpacity } from "react-native";
 import React from "react";
+import { Link } from "expo-router";
 import { useState } from "react";
 
-let n;
+
 const App = () =>{
 
-    const [Change, setchange] = useState(true)
+    const [Change, setchange] = useState(true);
 
+    
+    
     return(
         <View style ={style.main}>
             <View style= {style.ViewStyle} >
             <Text style={style.ViewText}>Login Basic</Text>
 
             <View style = {style.ViewContainerInput}>
-            <TextInput style={style.ViewTextInput} onChange={()=>{
-                
-            }} placeholder="Username" defaultValue={n}/>
-            <TextInput id="Input2" style={style.ViewTextInput} placeholder="Password" />
+            <TextInput style={style.ViewTextInput} onChange={()=>{}} placeholder="Username" />
+            <TextInput id="Input2" style={style.ViewTextInput} onPress={()=>{}} placeholder="Password" />
             </View >
             <TouchableOpacity onPress={()=>{
                 setchange(!Change)
-                Change ? alert('rojo') : alert('gris');
-                if (n == undefined){
-                    alert('si')
-                }else{
-
-                }
             }} style = { Change ? style.Btn :  style.Btn2}>
                 <Text style = {style.BtnText}>
                     Login
                 </Text>
             </TouchableOpacity>
+            <Link href = "/Pages2">
+            Olvide mi contrasena
+            </Link>
             </View>
             
         </View>
